@@ -2,6 +2,7 @@ from program import ProgramManager
 from timer import Timer
 from notification import Notification
 import os
+from gui import Gui
 
 # Build an object from Program Manager to operate with programs
 program_manager = ProgramManager()
@@ -11,6 +12,9 @@ notification = Notification()
 
 # Build an object from Timer to take care of time things
 timer = Timer(notif_obj= notification)
+
+# Build an object from Gui to take care of graphic interface
+ui = Gui()
 
 # main function to make program repeatable
 def main():
