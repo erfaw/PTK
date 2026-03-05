@@ -30,8 +30,7 @@ class Gui:
         )
         self.target_time_entry.grid(pady=10)
 
-        self.accept_btn = Button(text= "Agree", width= 51, command= self.accept_btn_clicked)
-        self.accept_btn.grid()
+        self.accept_btn = Button(text= "Agree", width= 51)
     
     def accept_btn_clicked(self):
         self.program_name = self.program_name_entry.get().strip()
