@@ -40,6 +40,12 @@ def main():
             print("Exiting the program.")
             break
 ui.init_configs()
+
+ui.accept_btn.config(
+    command= main
+)
+ui.accept_btn.grid()
+
 ui.root.mainloop()
 
 if __name__ == "__main__":
