@@ -3,7 +3,6 @@ from tkinter import *
 class Gui(Tk):
     def __init__(self):
         super().__init__()
-        # set 
         self.base_font = ('Calibri', 18, 'normal')
         self.title("P-T-K")
         self.minsize(50,50)
@@ -37,4 +36,3 @@ class Gui(Tk):
     def accept_btn_clicked(self):
         self.program_name = self.program_name_entry.get().strip()
         self.target_time = self.target_time_entry.get().strip()
-        
