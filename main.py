@@ -39,6 +39,8 @@ def main():
         if repeat != 'y':
             print("Exiting the program.")
             break
+ui.init_configs()
+ui.root.mainloop()
 
 if __name__ == "__main__":
     main()

@@ -1,13 +1,15 @@
 from tkinter import *
 
-class Gui(Tk):
+class Gui:
     def __init__(self):
-        super().__init__()
+        self.root = Tk()
         self.base_font = ('Calibri', 18, 'normal')
-        self.title("P-T-K")
-        self.minsize(50,50)
-        # self.resizable(False, False)
-        self.config(bg= "gray", padx=10, pady=10)
+
+    def init_configs(self):
+        self.root.title("P-T-K")
+        self.root.minsize(50,50)
+        # self.root.resizable(False, False)
+        self.root.config(bg= "gray", padx=10, pady=10)
 
         self.titr_label_1 = Label(text= "Enter name of the program:", font= self.base_font, bg= "gray")
         self.titr_label_1.grid()
