@@ -16,25 +16,11 @@ class Timer:
     
     def countdown_timer(self, wait_time, target_time, program_name):
         """Display a countdown timer until the target time."""
-        notified = False
-        notified2 = False
-        while wait_time > 0:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            
+        while wait_time > 0:            
             minutes, seconds = divmod(int(wait_time), 60)
             hours, minutes = divmod(minutes, 60)
-
-            print(f"<< {program_name} >>Time remaining until {target_time}: {hours:02d}:{minutes:02d}:00")
-            
-            if not notified and wait_time <= 900:  
-                self.notification.send_notification(f"<< {program_name} >> will close in 15 minutes.")
-                notified = True
-
-            if not notified2 and wait_time <= 120:  
-                self.notification.send_notification(f"<< {program_name} >> will close in 2 minutes.")
-                notified2 = True
             
             time.sleep(60)
             wait_time -= 60
 
-        # os.system('cls' if os.name == 'nt' else 'clear')  
+            return f"<< {program_name} >>Time remaining until {target_time}: {hours:02d}:{minutes:02d}:00"
