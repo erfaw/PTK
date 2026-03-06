@@ -31,10 +31,6 @@ def main():
     except ValueError: # TODO : check if you can do it just for wait_time initialization line and do the rest in 'else' of try-except statement
         print("Invalid time format. Please use the format 'HH:MM AM/PM'.")
 
-    repeat = input("Do you want to schedule another program to close? ([Y]es/[N]o): ").strip().lower() # TODO : deleet this part at next commit
-    if repeat != 'y':
-        print("Exiting the program.")
-
 ui.init_configs()
 
 ui.accept_btn.config(
