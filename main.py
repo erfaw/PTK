@@ -13,9 +13,11 @@ timer = Timer(notif_obj= notification)
 ui = Gui()
 
 def main():
-    program_name = input("Enter the name of the program to close (e.g., notepad.exe): ").strip() # TODO : get it from ui
+    program_name = ui.program_name_entry.get().strip()
 
-    target_time = input("Enter the target time to close the program (e.g., 11:00 PM): ").strip() # TODO : get it from ui
+    target_time = ui.target_time_entry.get().strip()
+
+    input(f"program_name:\t{program_name}\ntarget_time:\t{target_time}")
 
     try:
         wait_time = timer.calculate_wait_time(target_time)
