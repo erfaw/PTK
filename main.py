@@ -21,6 +21,8 @@ def main():
     except ValueError:
         ui.error("Invalid time format. Please use the format 'HH:MM AM/PM'.")
     else:
+        ui.remove_grid_first_page()
+        ui.show_timer()
         def count_down_timer(count): # TODO : show a progress bar or actual timer with ui 
             global timer_after_id
             if count > 0 :
