@@ -29,11 +29,7 @@ def main():
                 timer_after_id = ui.root.after(1000, count_down_timer, count-1 )
             else: 
                 ui.root.after_cancel(timer_after_id)
-                pids = program_manager.find_processes(program_name) # TODO : make whole this part a function named 'kill'
-                if pids:
-                    program_manager.close_programs(pids, program_name)
-                else:
-                    print(f"Program '{program_name}' not found.")
+                program_manager.kill(program_name= program_name)
         count_down_timer(wait_time)
 
     except ValueError: # TODO : check if you can do it just for wait_time initialization line and do the rest in 'else' of try-except statement
