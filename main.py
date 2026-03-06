@@ -17,13 +17,15 @@ def main():
 
     target_time = ui.target_time_entry.get().strip()
 
-    input(f"program_name:\t{program_name}\ntarget_time:\t{target_time}")
-
     try:
         wait_time = timer.calculate_wait_time(target_time)
         print(f"Program will close at {target_time}. Waiting...")
 
-        timer.countdown_timer(wait_time, target_time, program_name) # TODO : need change with a better way
+        timer.countdown_timer(
+            wait_time,
+            target_time,
+            program_name,
+        ) # TODO : need change with a better way
 
         pids = program_manager.find_processes(program_name) # TODO : make whole this part a function named 'kill'
         if pids:
