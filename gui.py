@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 class Gui:
     def __init__(self):
@@ -35,3 +36,19 @@ class Gui:
     def accept_btn_clicked(self):
         self.program_name = self.program_name_entry.get().strip()
         self.target_time = self.target_time_entry.get().strip()
+    
+    def warn(self, message):
+        messagebox.showwarning(
+            message= message
+        )
+
+    def info(self, message):
+        messagebox.showinfo(
+            message= message
+        )
+
+    def error(self, message):
+        messagebox.showerror(
+            message= message
+        )
+
