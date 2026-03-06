@@ -13,17 +13,18 @@ class ProgramManager:
                 pids.append(proc.info['pid'])
         return pids
     
-    def close_programs(self, pids, program_name):
+    def close_programs(self, pids, program_name) -> bool:
         """Close all programs using their PIDs."""
         for pid in pids:
-            try:
-                os.kill(pid, 9)  # Sends SIGKILL to terminate the process
-                print(f"<< {program_name} >> with PID {pid} has been closed.")
-            except Exception as e:
-                print(f"Error closing program with PID {pid}: {e}")
-    def kill(self, program_name):
+            os.kill(pid, 9)  # Sends SIGKILL to terminate the process
+        return True
+
+    def kill(self, program_name) -> bool:
         pids = self.find_processes(program_name)
         if pids:
-            self.close_programs(pids, program_name)
+            if self.close_programs(pids, program_name):
+                return True
+            else: 
+                return False
         else:
-            print(f"Program <{program_name}> not found.")
+            return False
