@@ -21,17 +21,21 @@ def main():
         wait_time = timer.calculate_wait_time(target_time)
         print(f"Program will close at {target_time}. Waiting...")
 
-        timer.countdown_timer(
-            wait_time,
-            target_time,
-            program_name,
-        ) # TODO : need change with a better way
+        timer_after_id = None
+        def count_down_timer(count):
+            global timer_after_id
+            print(f"last:\t{count}")
+            if count > 0 :
+                timer_after_id = ui.root.after(1000, count_down_timer, count-1 )
+            else: 
+                ui.root.after_cancel(timer_after_id)
+                pids = program_manager.find_processes(program_name) # TODO : make whole this part a function named 'kill'
+                if pids:
+                    program_manager.close_programs(pids, program_name)
+                else:
+                    print(f"Program '{program_name}' not found.")
+        count_down_timer(wait_time)
 
-        pids = program_manager.find_processes(program_name) # TODO : make whole this part a function named 'kill'
-        if pids:
-            program_manager.close_programs(pids, program_name)
-        else:
-            print(f"Program '{program_name}' not found.")
     except ValueError: # TODO : check if you can do it just for wait_time initialization line and do the rest in 'else' of try-except statement
         print("Invalid time format. Please use the format 'HH:MM AM/PM'.")
 
