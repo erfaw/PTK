@@ -21,7 +21,7 @@ def main():
     except ValueError:
         ui.error("Invalid time format. Please use the format 'HH:MM AM/PM'.")
     else:
-        def count_down_timer(count):
+        def count_down_timer(count): # TODO : show a progress bar or actual timer with ui 
             global timer_after_id
             if count > 0 :
                 timer_after_id = ui.root.after(1000, count_down_timer, count-1 )

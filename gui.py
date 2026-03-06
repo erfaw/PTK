@@ -51,4 +51,6 @@ class Gui:
         messagebox.showerror(
             message= message
         )
+    
+    # TODO : make a container which shows a progress bar or timer on top of first page with a 'cancele' btn
 
