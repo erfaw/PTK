@@ -1,10 +1,11 @@
 import psutil, os
+from psutil import Process
 
 class ProgramManager:
     def __init__(self):
         pass
 
-    def find_processes(self, name:str) -> list:
+    def find_processes(self, name:str) -> list[Process]:
         """Find all process IDs (PIDs) of a given program by its name."""
         pids = []
         for proc in psutil.process_iter(attrs=['pid', 'name']):
