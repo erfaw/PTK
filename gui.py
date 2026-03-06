@@ -53,4 +53,38 @@ class Gui:
         )
     
     # TODO : make a container which shows a progress bar or timer on top of first page with a 'cancele' btn
+    def show_timer(self):
+        self.timer_container = Canvas(
+            self.root,
+            bg= 'black',
+            width= self.root.winfo_width(),
+            height= self.root.winfo_height()//2
+        )
+        self.timer_container.grid(
+            row=0
+        )
+
+        self.time = self.timer_container.create_text(
+            200,
+            60,
+            text= '00:00',
+            fill= 'white',
+            font= self.base_font
+        )
+
+        self.timer_cancele_btn = Button(
+            text='Cancel',
+            bg='red',
+            highlightthickness= 0,
+            # command= cancele timer and restart,
+            width= 55
+        )
+        self.timer_cancele_btn.grid()
+
+    def remove_grid_first_page(self):
+        self.titr_label_1.grid_remove()
+        self.program_name_entry.grid_remove()
+        self.titr_label_2.grid_remove()
+        self.target_time_entry.grid_remove()
+        self.accept_btn.grid_remove()
 
