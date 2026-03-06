@@ -13,32 +13,29 @@ timer = Timer(notif_obj= notification)
 ui = Gui()
 
 def main():
-    while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
+    program_name = input("Enter the name of the program to close (e.g., notepad.exe): ").strip()
 
-        program_name = input("Enter the name of the program to close (e.g., notepad.exe): ").strip()
+    target_time = input("Enter the target time to close the program (e.g., 11:00 PM): ").strip()
 
-        target_time = input("Enter the target time to close the program (e.g., 11:00 PM): ").strip()
+    try:
+        wait_time = timer.calculate_wait_time(target_time)
+        print(f"Program will close at {target_time}. Waiting...")
 
-        try:
-            wait_time = timer.calculate_wait_time(target_time)
-            print(f"Program will close at {target_time}. Waiting...")
+        timer.countdown_timer(wait_time, target_time, program_name)
 
-            timer.countdown_timer(wait_time, target_time, program_name)
+        pids = program_manager.find_processes(program_name)
+        if pids:
+            program_manager.close_programs(pids, program_name)
+        else:
+            print(f"Program '{program_name}' not found.")
 
-            pids = program_manager.find_processes(program_name)
-            if pids:
-                program_manager.close_programs(pids, program_name)
-            else:
-                print(f"Program '{program_name}' not found.")
+    except ValueError:
+        print("Invalid time format. Please use the format 'HH:MM AM/PM'.")
 
-        except ValueError:
-            print("Invalid time format. Please use the format 'HH:MM AM/PM'.")
+    repeat = input("Do you want to schedule another program to close? ([Y]es/[N]o): ").strip().lower()
+    if repeat != 'y':
+        print("Exiting the program.")
 
-        repeat = input("Do you want to schedule another program to close? ([Y]es/[N]o): ").strip().lower()
-        if repeat != 'y':
-            print("Exiting the program.")
-            break
 ui.init_configs()
 
 ui.accept_btn.config(
@@ -47,6 +44,3 @@ ui.accept_btn.config(
 ui.accept_btn.grid()
 
 ui.root.mainloop()
-
-if __name__ == "__main__":
-    main()
