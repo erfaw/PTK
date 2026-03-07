@@ -99,7 +99,7 @@ class Gui:
         if now_time_obj.hour >= 12:
             self.am_or_pm.select_set(1)
         else: 
-            self.am_or_pm.select(0)
+            self.am_or_pm.select_set(0)
 
         self.accept_btn = Button(text= "Agree", width= 51)
         self.accept_btn.grid(
@@ -124,7 +124,7 @@ class Gui:
             message= message
         )
     
-    def show_timer(self):
+    def show_timer(self, program_name):
         self.timer_container = Canvas(
             self.root,
             bg= 'black',
@@ -145,6 +145,14 @@ class Gui:
                 self.font_path/'SOURCECODEPRO-REGULAR.TTF',
                 65,
                 "bold")
+        )
+
+        self.details = self.timer_container.create_text(
+            45,
+            10,
+            text= f"{program_name}",
+            font= ('Calibri', 9, 'normal') ,
+            fill= 'white',
         )
 
         self.progress_bar = Progressbar(

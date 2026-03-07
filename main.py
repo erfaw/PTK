@@ -29,7 +29,7 @@ def main():
         ui.error("Invalid time format. Please use the format 'HH:MM AM/PM'.")
     else:
         ui.remove_grid_first_page()
-        ui.show_timer()
+        ui.show_timer(program_name= program_name)
         def command_cancel_btn_func():
             ui.root.after_cancel(timer_after_id)
             ui.back_home()
