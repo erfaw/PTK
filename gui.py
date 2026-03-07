@@ -56,7 +56,8 @@ class Gui:
             from_=1,
             to=12,
             width=10,
-            font= self.base_font
+            font= self.base_font,
+            justify= 'center',
             # command=None
         )
         self.cologn_sign = Label(
@@ -68,7 +69,8 @@ class Gui:
             from_=0,
             to=59,
             width=10,
-            font= self.base_font
+            font= self.base_font,
+            justify= 'center',
             # command=None
         )
         self.target_hour_entry.grid(
