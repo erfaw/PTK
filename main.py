@@ -14,6 +14,8 @@ ui = Gui()
 
 def main():
     program_name = ui.program_name_entry.get().strip()
+    if not '.exe' in program_name :
+        program_name = f"{program_name}.exe"
     target_time = ui.target_time_entry.get().strip()
     try:
         wait_time = timer.calculate_wait_time(target_time)
