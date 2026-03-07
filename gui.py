@@ -15,9 +15,18 @@ class Gui:
         self.root.resizable(False, False)
         self.root.config(bg= "gray", padx=10, pady=10)
 
-        # TODO : justify all Label text to left
-        self.titr_label_1 = Label(text= "Enter name of the program:", font= self.base_font, bg= "gray")
-        self.titr_label_1.grid()
+        self.titr_label_1 = Label(
+            text= "Enter name of the program:",
+            font= self.base_font,
+            bg= "gray",
+            anchor= 'w',
+            width= 30,
+        )
+        self.titr_label_1.grid(
+            row=0,
+            column= 0,
+            columnspan= 1,
+        )
 
         self.program_name_entry = Entry(
             width= 30,
@@ -26,7 +35,13 @@ class Gui:
         self.program_name_entry.focus()
         self.program_name_entry.grid()
 
-        self.titr_label_2 = Label(text= "Enter target time (e.g., 11:00 PM): ", font= self.base_font, bg= "gray")
+        self.titr_label_2 = Label(
+            text= "Enter target time (e.g., 11:00 PM): ",
+            font= self.base_font,
+            bg= "gray",
+            anchor= 'w',
+            width= 30,
+        )
         self.titr_label_2.grid()
 
         # TODO : add radios btn to select between AM and PM, also need to decrease width of entry
