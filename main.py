@@ -64,6 +64,5 @@ ui.init_configs()
 ui.accept_btn.config(
     command= main
 )
-ui.accept_btn.grid()
 
 ui.root.mainloop()

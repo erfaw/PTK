@@ -25,7 +25,7 @@ class Gui:
         self.titr_label_1.grid(
             row=0,
             column= 0,
-            columnspan= 1,
+            columnspan= 6,
         )
 
         self.program_name_entry = Entry(
@@ -33,7 +33,11 @@ class Gui:
             font= self.base_font
         ) # TODO : alongside of entry, build a btn to render a page, which had a list of open programs from taskbar of system for user to choose (instead of type program name itself) 
         self.program_name_entry.focus()
-        self.program_name_entry.grid()
+        self.program_name_entry.grid(
+            row= 1,
+            column= 0,
+            columnspan= 6
+        )
 
         self.titr_label_2 = Label(
             text= "Enter target time (e.g., 11:00 PM): ",
@@ -42,17 +46,38 @@ class Gui:
             anchor= 'w',
             width= 30,
         )
-        self.titr_label_2.grid()
+        self.titr_label_2.grid(
+            row= 2,
+            column= 0,
+            columnspan= 6
+        )
 
-        # TODO : add radios btn to select between AM and PM, also need to decrease width of entry
         # TODO : add 3 Entry instead of 1, for hour and minute and PM/AM
         self.target_time_entry = Entry(
-            width= 30,
+            width= 27,
             font= self.base_font
         )
-        self.target_time_entry.grid(pady=10)
+        self.target_time_entry.grid(
+            row= 3,
+            column= 0,
+            columnspan= 5
+        )
+        self.am_or_pm = Listbox(height= 2, width=5)
+        am_pm = ['AM', 'PM']
+        for _ in am_pm:
+            self.am_or_pm.insert(am_pm.index(_), _)
+        self.am_or_pm.grid(
+            row= 3,
+            column= 5,
+        )
 
         self.accept_btn = Button(text= "Agree", width= 51)
+        self.accept_btn.grid(
+            pady= 2,
+            row= 4,
+            column= 0,
+            columnspan= 6
+        )
     
     def warn(self, message):
         messagebox.showwarning(
@@ -115,6 +140,7 @@ class Gui:
         self.titr_label_2.grid_remove()
         self.target_time_entry.grid_remove()
         self.accept_btn.grid_remove()
+        self.am_or_pm.grid_remove()
     
     def back_home(self):
         self.titr_label_1.grid()
@@ -122,6 +148,7 @@ class Gui:
         self.titr_label_2.grid()
         self.target_time_entry.grid()
         self.accept_btn.grid()
+        self.am_or_pm.grid()
 
         self.timer_container.grid_remove()
         self.timer_cancele_btn.grid_remove()
