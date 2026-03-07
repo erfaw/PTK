@@ -30,7 +30,7 @@ def main():
         ui.timer_cancele_btn.config(
             command= command_cancel_btn_func,
         )
-        def count_down_timer(count): # TODO : show a progress bar or actual timer with ui 
+        def count_down_timer(count):
             global timer_after_id
             if count > 0 :
                 ui.update_timer_text(

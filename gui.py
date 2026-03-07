@@ -55,7 +55,6 @@ class Gui:
             message= message
         )
     
-    # TODO : make a container which shows a progress bar or timer on top of first page with a 'cancele' btn
     def show_timer(self):
         self.timer_container = Canvas(
             self.root,
