@@ -36,6 +36,9 @@ def main():
                 ui.update_timer_text(
                     timer.format_time(count)
                 )
+                ui.update_progress_bar(
+                    (1-(count/wait_time))*100
+                )
                 timer_after_id = ui.root.after(
                     1000,
                     count_down_timer,

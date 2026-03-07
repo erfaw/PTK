@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from pathlib import Path
+from tkinter.ttk import Progressbar
 
 class Gui:
     def __init__(self):
@@ -77,6 +78,14 @@ class Gui:
                 "bold")
         )
 
+        self.progress_bar = Progressbar(
+            self.root,
+            orient= HORIZONTAL,
+            length= self.root.winfo_width(),
+            mode='determinate'
+        )
+        self.progress_bar.grid(pady=2)
+
         self.timer_cancele_btn = Button(
             text='Cancel',
             bg='red',
@@ -102,10 +111,15 @@ class Gui:
 
         self.timer_container.grid_remove()
         self.timer_cancele_btn.grid_remove()
+        self.update_progress_bar(0)
+        self.progress_bar.grid_remove()
     
     def update_timer_text(self, time_str):
         self.timer_container.itemconfig(
             self.time,
             text= time_str
         )
+    
+    def update_progress_bar(self, value):
+        self.progress_bar['value'] = value
 
