@@ -71,8 +71,10 @@ class Gui:
             60,
             text= '00:00',
             fill= 'white',
-            # font= (r"fonts\SOURCECODEPRO-LIGHT.TTF", 24, "bold")
-            font= (self.font_path/'SOURCECODEPRO-REGULAR.TTF', 24, "bold")
+            font= (
+                self.font_path/'SOURCECODEPRO-REGULAR.TTF',
+                90,
+                "bold")
         )
 
         self.timer_cancele_btn = Button(
