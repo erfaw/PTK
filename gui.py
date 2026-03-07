@@ -139,7 +139,7 @@ class Gui:
             fill= 'white',
             font= (
                 self.font_path/'SOURCECODEPRO-REGULAR.TTF',
-                90,
+                65,
                 "bold")
         )
 
