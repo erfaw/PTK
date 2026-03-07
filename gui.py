@@ -164,7 +164,9 @@ class Gui:
         self.titr_label_1.grid_remove()
         self.program_name_entry.grid_remove()
         self.titr_label_2.grid_remove()
-        self.target_time_entry.grid_remove()
+        self.target_hour_entry.grid_remove()
+        self.cologn_sign.grid_remove()
+        self.target_minute_entry.grid_remove()
         self.accept_btn.grid_remove()
         self.am_or_pm.grid_remove()
     
