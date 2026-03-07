@@ -28,3 +28,5 @@ class ProgramManager:
                 return False
         else:
             return False
+        
+    # TODO : somehow get list of open programs with detail from system

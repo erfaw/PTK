@@ -30,7 +30,7 @@ def main():
         ui.timer_cancele_btn.config(
             command= command_cancel_btn_func,
         )
-        def count_down_timer(count):
+        def count_down_timer(count): # TODO : add notification for 2min and 15 min left to end
             global timer_after_id
             if count > 0 :
                 ui.update_timer_text(

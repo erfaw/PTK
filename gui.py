@@ -15,19 +15,22 @@ class Gui:
         self.root.resizable(False, False)
         self.root.config(bg= "gray", padx=10, pady=10)
 
+        # TODO : justify all Label text to left
         self.titr_label_1 = Label(text= "Enter name of the program:", font= self.base_font, bg= "gray")
         self.titr_label_1.grid()
 
         self.program_name_entry = Entry(
             width= 30,
             font= self.base_font
-        )
+        ) # TODO : alongside of entry, build a btn to render a page, which had a list of open programs from taskbar of system for user to choose (instead of type program name itself) 
         self.program_name_entry.focus()
         self.program_name_entry.grid()
 
         self.titr_label_2 = Label(text= "Enter target time (e.g., 11:00 PM): ", font= self.base_font, bg= "gray")
         self.titr_label_2.grid()
 
+        # TODO : add radios btn to select between AM and PM, also need to decrease width of entry
+        # TODO : add 3 Entry instead of 1, for hour and minute and PM/AM
         self.target_time_entry = Entry(
             width= 30,
             font= self.base_font
@@ -36,7 +39,7 @@ class Gui:
 
         self.accept_btn = Button(text= "Agree", width= 51)
     
-    def accept_btn_clicked(self):
+    def accept_btn_clicked(self): # TODO : remove this method (unused)
         self.program_name = self.program_name_entry.get().strip()
         self.target_time = self.target_time_entry.get().strip()
     
@@ -66,6 +69,7 @@ class Gui:
             row=0
         )
 
+        # TODO : render a text to show this timer is for what program
         self.time = self.timer_container.create_text(
             200,
             60,
@@ -85,7 +89,7 @@ class Gui:
         )
         self.progress_bar.grid(pady=2)
 
-        self.timer_cancele_btn = Button(
+        self.timer_cancele_btn = Button( # TODO : choose a better color for this btn
             text='Cancel',
             bg='red',
             highlightthickness= 0,
@@ -122,3 +126,4 @@ class Gui:
     def update_progress_bar(self, value):
         self.progress_bar['value'] = value
 
+# TODO : some how change icon of program
