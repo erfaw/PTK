@@ -3,6 +3,8 @@ from timer import Timer
 from notification import Notification
 import os
 from gui import Gui
+import asyncio
+from threading import Thread
 
 program_manager = ProgramManager()
 
@@ -10,11 +12,28 @@ notification = Notification()
 
 timer = Timer(notif_obj= notification)
 
+async def my_coroutine():
+    print("starting coroutine")
+    await asyncio.sleep(10)
+    print("coroutine compelete")
+
+def run_asyncio_in_thread():
+    global loop
+    loop = asyncio.new_event_loop()
+    asyncio.run(my_coroutine())
+
 ui = Gui()
 
 def main():
     program_name = ui.program_name_entry.get().strip()
     target_time = ui.target_time_entry.get().strip()
+
+    
+    t = Thread(
+        target= run_asyncio_in_thread
+    )
+    t.start()    
+
     try:
         wait_time = timer.calculate_wait_time(target_time)
         ui.info(f"Program will close at {target_time}. Waiting...")
