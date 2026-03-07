@@ -39,10 +39,6 @@ class Gui:
 
         self.accept_btn = Button(text= "Agree", width= 51)
     
-    def accept_btn_clicked(self): # TODO : remove this method (unused)
-        self.program_name = self.program_name_entry.get().strip()
-        self.target_time = self.target_time_entry.get().strip()
-    
     def warn(self, message):
         messagebox.showwarning(
             message= message
