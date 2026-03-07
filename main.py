@@ -33,6 +33,7 @@ def main():
                     ui.info(f"<< {program_name} >> closed!")
                 else:
                     ui.info(f"<{program_name}> not found.")
+                ui.back_home()
         count_down_timer(wait_time)
 
 ui.init_configs()

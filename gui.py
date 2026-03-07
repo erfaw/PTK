@@ -87,4 +87,14 @@ class Gui:
         self.titr_label_2.grid_remove()
         self.target_time_entry.grid_remove()
         self.accept_btn.grid_remove()
+    
+    def back_home(self):
+        self.titr_label_1.grid()
+        self.program_name_entry.grid()
+        self.titr_label_2.grid()
+        self.target_time_entry.grid()
+        self.accept_btn.grid()
+
+        self.timer_container.grid_remove()
+        self.timer_cancele_btn.grid_remove()
 
