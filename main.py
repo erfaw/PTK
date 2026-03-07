@@ -64,7 +64,9 @@ def main():
                 ui.back_home()
         count_down_timer(wait_time)
 
-ui.init_configs()
+ui.init_configs(
+    now_time_obj= timer.get_now()
+)
 
 ui.accept_btn.config(
     command= main

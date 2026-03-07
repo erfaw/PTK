@@ -9,7 +9,7 @@ class Gui:
         self.base_font = ('Calibri', 18, 'normal')
         self.font_path = Path(__file__).resolve().parent / 'fonts'
 
-    def init_configs(self):
+    def init_configs(self, now_time_obj):
         self.root.title("P-T-K")
         self.root.minsize(50,50)
         self.root.resizable(False, False)
@@ -96,6 +96,10 @@ class Gui:
             row= 3,
             column= 5,
         )
+        if now_time_obj.hour >= 12:
+            self.am_or_pm.select_set(1)
+        else: 
+            self.am_or_pm.select(0)
 
         self.accept_btn = Button(text= "Agree", width= 51)
         self.accept_btn.grid(

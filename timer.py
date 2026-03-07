@@ -1,10 +1,12 @@
 from datetime import datetime
 import time
 import os
+import pytz
 
 class Timer:
     def __init__(self, notif_obj):
         self.notification = notif_obj
+        self.time_zone = pytz.timezone('Asia/Tehran')
 
     def calculate_wait_time(self, target_time) -> float:
         """Calculate the number of seconds to wait until the target time."""
@@ -17,3 +19,6 @@ class Timer:
     def format_time(self, seconds):
         """return %M:%S formated string of float seconds recieved as arg"""
         return time.strftime("%M : %S", time.gmtime(seconds))
+    
+    def get_now(self):
+        return datetime.now(tz= self.time_zone).time()
