@@ -1,10 +1,12 @@
 from tkinter import *
 from tkinter import messagebox
+from pathlib import Path
 
 class Gui:
     def __init__(self):
         self.root = Tk()
         self.base_font = ('Calibri', 18, 'normal')
+        self.font_path = Path(__file__).resolve().parent / 'fonts'
 
     def init_configs(self):
         self.root.title("P-T-K")
@@ -69,7 +71,8 @@ class Gui:
             60,
             text= '00:00',
             fill= 'white',
-            font= self.base_font
+            # font= (r"fonts\SOURCECODEPRO-LIGHT.TTF", 24, "bold")
+            font= (self.font_path/'SOURCECODEPRO-REGULAR.TTF', 24, "bold")
         )
 
         self.timer_cancele_btn = Button(
