@@ -161,14 +161,18 @@ class Gui:
         self.timer_cancele_btn.grid()
 
     def remove_grid_first_page(self):
-        self.titr_label_1.grid_remove()
-        self.program_name_entry.grid_remove()
-        self.titr_label_2.grid_remove()
-        self.target_hour_entry.grid_remove()
-        self.cologn_sign.grid_remove()
-        self.target_minute_entry.grid_remove()
-        self.accept_btn.grid_remove()
-        self.am_or_pm.grid_remove()
+        self.first_page_elements = [
+            self.titr_label_1,
+            self.program_name_entry,
+            self.titr_label_2,
+            self.target_hour_entry,
+            self.cologn_sign,
+            self.target_minute_entry,
+            self.accept_btn,
+            self.am_or_pm,
+        ]
+        for element in self.first_page_elements:
+            element.grid_remove()
     
     def back_home(self):
         self.titr_label_1.grid()
