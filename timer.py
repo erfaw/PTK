@@ -27,4 +27,4 @@ class Timer:
     
     def format_time(self, seconds):
         """return %M:%S formated string of float seconds recieved as arg"""
-        return time.strftime("%M:%S", time.gmtime(seconds))
+        return time.strftime("%M : %S", time.gmtime(seconds))
