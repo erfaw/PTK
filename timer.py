@@ -14,17 +14,6 @@ class Timer:
             target = target.replace(day=now.day + 1)  # Adjust for next day
         return (target - now).total_seconds()
     
-    def countdown_timer(self, wait_time, target_time, program_name): # TODO : decide about this method, seems unused
-        """Display a countdown timer until the target time."""
-        while wait_time > 0:            
-            minutes, seconds = divmod(int(wait_time), 60)
-            hours, minutes = divmod(minutes, 60)
-            
-            time.sleep(60)
-            wait_time -= 60
-
-            return f"<< {program_name} >>Time remaining until {target_time}: {hours:02d}:{minutes:02d}:00"
-    
     def format_time(self, seconds):
         """return %M:%S formated string of float seconds recieved as arg"""
         return time.strftime("%M : %S", time.gmtime(seconds))
