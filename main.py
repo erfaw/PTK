@@ -26,7 +26,11 @@ def main():
         def count_down_timer(count): # TODO : show a progress bar or actual timer with ui 
             global timer_after_id
             if count > 0 :
-                timer_after_id = ui.root.after(1000, count_down_timer, count-1 )
+                timer_after_id = ui.root.after(
+                    1000,
+                    count_down_timer,
+                    count-1,
+                )
             else: 
                 ui.root.after_cancel(timer_after_id)
                 if program_manager.kill(program_name):
