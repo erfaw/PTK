@@ -16,7 +16,12 @@ def main():
     program_name = ui.program_name_entry.get().strip()
     if not '.exe' in program_name :
         program_name = f"{program_name}.exe"
-    target_time = ui.target_time_entry.get().strip()
+
+    target_hour = ui.target_hour_entry.get()
+    target_minute = ui.target_minute_entry.get()
+    target_am_pm = ui.am_or_pm.get(ui.am_or_pm.curselection())
+    target_time = f"{target_hour}:{target_minute} {target_am_pm}"
+
     try:
         wait_time = timer.calculate_wait_time(target_time)
         ui.info(f"Program will close at {target_time}. Waiting...")
