@@ -39,6 +39,10 @@ def main():
                 ui.update_progress_bar(
                     (1-(count/wait_time))*100
                 )
+                if int(count) == 1.5*60 :
+                    notification.send(f"<< {program_name} >> will close in 1.5 minutes.")
+                elif int(count) == 15*60 :
+                    notification.send(f"<< {program_name} >> will close in 15 minutes.")
                 timer_after_id = ui.root.after(
                     1000,
                     count_down_timer,

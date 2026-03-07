@@ -9,5 +9,5 @@ class Notification:
         notification.notify(
             title="PTK",
             message=message,
-            timeout=15  # Duration in seconds
+            timeout=5  # Duration in seconds
         )
