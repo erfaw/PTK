@@ -175,19 +175,17 @@ class Gui:
             element.grid_remove()
     
     def back_home(self):
-        self.titr_label_1.grid()
-        self.program_name_entry.grid()
-        self.titr_label_2.grid()
-        self.target_hour_entry.grid()
-        self.cologn_sign.grid()
-        self.target_minute_entry.grid()
-        self.accept_btn.grid()
-        self.am_or_pm.grid()
+        for element in self.first_page_elements:
+            element.grid()
 
-        self.timer_container.grid_remove()
-        self.timer_cancele_btn.grid_remove()
+        self.timer_page_elements = [
+            self.timer_container,
+            self.timer_cancele_btn,
+            self.progress_bar,
+        ]
+        for element in self.timer_page_elements:
+            element.grid_remove()
         self.update_progress_bar(0)
-        self.progress_bar.grid_remove()
     
     def update_timer_text(self, time_str):
         self.timer_container.itemconfig(
