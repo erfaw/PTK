@@ -23,6 +23,13 @@ def main():
     else:
         ui.remove_grid_first_page()
         ui.show_timer()
+        def command_cancel_btn_func():
+            ui.root.after_cancel(timer_after_id)
+            ui.back_home()
+            ui.info("Timer canceled...")
+        ui.timer_cancele_btn.config(
+            command= command_cancel_btn_func,
+        )
         def count_down_timer(count): # TODO : show a progress bar or actual timer with ui 
             global timer_after_id
             if count > 0 :
