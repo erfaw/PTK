@@ -12,7 +12,7 @@ class Gui:
     def init_configs(self):
         self.root.title("P-T-K")
         self.root.minsize(50,50)
-        # self.root.resizable(False, False)
+        self.root.resizable(False, False)
         self.root.config(bg= "gray", padx=10, pady=10)
 
         self.titr_label_1 = Label(text= "Enter name of the program:", font= self.base_font, bg= "gray")
