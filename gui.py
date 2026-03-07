@@ -135,7 +135,6 @@ class Gui:
             row=0
         )
 
-        # TODO : render a text to show this timer is for what program
         self.time = self.timer_container.create_text(
             200,
             60,
