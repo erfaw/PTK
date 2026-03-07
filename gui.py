@@ -52,15 +52,39 @@ class Gui:
             columnspan= 6
         )
 
-        # TODO : add 3 Entry instead of 1, for hour and minute and PM/AM
-        self.target_time_entry = Entry(
-            width= 27,
+        self.target_hour_entry = Spinbox(
+            from_=1,
+            to=12,
+            width=10,
             font= self.base_font
+            # command=None
         )
-        self.target_time_entry.grid(
+        self.cologn_sign = Label(
+            text=' : ',
+            bg= "gray",
+            font= self.base_font    
+        )
+        self.target_minute_entry = Spinbox(
+            from_=0,
+            to=59,
+            width=10,
+            font= self.base_font
+            # command=None
+        )
+        self.target_hour_entry.grid(
             row= 3,
             column= 0,
-            columnspan= 5
+            columnspan= 2,
+        )
+        self.cologn_sign.grid(
+            row= 3,
+            column= 2,
+            columnspan= 1,
+        )
+        self.target_minute_entry.grid(
+            row= 3,
+            column= 3,
+            columnspan= 2,
         )
         self.am_or_pm = Listbox(height= 2, width=5)
         am_pm = ['AM', 'PM']
@@ -146,7 +170,9 @@ class Gui:
         self.titr_label_1.grid()
         self.program_name_entry.grid()
         self.titr_label_2.grid()
-        self.target_time_entry.grid()
+        self.target_hour_entry.grid()
+        self.cologn_sign.grid()
+        self.target_minute_entry.grid()
         self.accept_btn.grid()
         self.am_or_pm.grid()
 
