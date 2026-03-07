@@ -33,6 +33,9 @@ def main():
         def count_down_timer(count): # TODO : show a progress bar or actual timer with ui 
             global timer_after_id
             if count > 0 :
+                ui.update_timer_text(
+                    timer.format_time(count)
+                )
                 timer_after_id = ui.root.after(
                     1000,
                     count_down_timer,

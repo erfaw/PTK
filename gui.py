@@ -97,4 +97,10 @@ class Gui:
 
         self.timer_container.grid_remove()
         self.timer_cancele_btn.grid_remove()
+    
+    def update_timer_text(self, time_str):
+        self.timer_container.itemconfig(
+            self.time,
+            text= time_str
+        )
 

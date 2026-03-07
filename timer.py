@@ -24,3 +24,7 @@ class Timer:
             wait_time -= 60
 
             return f"<< {program_name} >>Time remaining until {target_time}: {hours:02d}:{minutes:02d}:00"
+    
+    def format_time(self, seconds):
+        """return %M:%S formated string of float seconds recieved as arg"""
+        return time.strftime("%M:%S", time.gmtime(seconds))
