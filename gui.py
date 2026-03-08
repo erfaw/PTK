@@ -31,14 +31,13 @@ class Gui:
         self.program_name_entry = Entry(
             width= 25,
             font= self.base_font
-        ) # TODO : alongside of entry, build a btn to render a page, which had a list of open programs from taskbar of system for user to choose (instead of type program name itself) 
+        ) 
         self.program_name_entry.focus()
         self.program_name_entry.grid(
             row= 1,
             column= 0,
             columnspan= 5
         )
-
         self.browse_btn = Button(
             text='Browse',
             bg='white',
@@ -225,6 +224,11 @@ class Gui:
         self.choose_page = Tk()
         self.choose_page.title('Choose a Program...')
         self.choose_page.config(bg= 'gray')
+
+        # TODO : somehow, render df.drop_duplicates names of open programs which must send here as arg, in order to be chosen by client
+        # TODO : somehow, fill client choice to entry of program name
+        
+
         self.choose_page.mainloop()
         
 # TODO : some how change icon of program
