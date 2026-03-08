@@ -220,14 +220,21 @@ class Gui:
     def update_progress_bar(self, value):
         self.progress_bar['value'] = value
 
-    def render_browse_page(self):
+    def render_browse_page(self, app_show):
         self.choose_page = Tk()
         self.choose_page.title('Choose a Program...')
         self.choose_page.config(bg= 'gray')
-
-        # TODO : somehow, render df.drop_duplicates names of open programs which must send here as arg, in order to be chosen by client
         # TODO : somehow, fill client choice to entry of program name
-        
+        for index, app in app_show.iterrows():
+            button = Button(
+                master= self.choose_page,
+                text= f"{app['name']}",
+                bg= 'white',
+                highlightthickness= 0,
+                font= ('Calibri', 13, 'normal'),
+                width= 50,
+            )
+            button.pack()
 
         self.choose_page.mainloop()
         

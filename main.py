@@ -65,7 +65,10 @@ def main():
         count_down_timer(wait_time)
 
 def take_program_from_sys():
-    ui.render_browse_page()
+    program_manager.df_client_apps = program_manager.get_open_programs()
+    ui.render_browse_page(
+        app_show = program_manager.df_client_apps.drop_duplicates('name')
+    )
 
 ui.init_configs(
     now_time_obj= timer.get_now()
