@@ -1,13 +1,14 @@
 from tkinter import *
 from tkinter import messagebox
 from pathlib import Path
-from tkinter.ttk import Progressbar
+from tkinter.ttk import Progressbar, Style
 
 class Gui:
     def __init__(self):
         self.root = Tk()
         self.base_font = ('Calibri', 18, 'normal')
         self.font_path = Path(__file__).resolve().parent / 'fonts'
+        self.set_icon()
 
     def init_configs(self, now_time_obj):
         self.root.title("P-T-K")
@@ -243,4 +244,10 @@ class Gui:
 
         self.choose_page.mainloop()
         
-# TODO : some how change icon of program
+    def set_icon(self):
+        icon_fp = Path(__file__).resolve().parent / 'icon.png'
+        self.icon_image = PhotoImage(file= icon_fp)
+        self.root.iconphoto(
+            True,
+            self.icon_image,
+        )
