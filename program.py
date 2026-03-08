@@ -40,7 +40,4 @@ class ProgramManager:
                     'name': proc.name()
                 }
             )
-        return pd.DataFrame(
-            index= [prog['pid'] for prog in programs],
-            data= [prog['name'] for prog in programs],
-        )
+        return pd.DataFrame(programs)
