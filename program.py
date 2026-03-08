@@ -1,9 +1,10 @@
 import psutil, os
 from psutil import Process
+import pandas as pd
 
 class ProgramManager:
     def __init__(self):
-        pass
+        self.df_all_programs = None
 
     def find_processes(self, name:str) -> list[Process]:
         """Find all process IDs (PIDs) of a given program by its name."""
@@ -30,3 +31,16 @@ class ProgramManager:
             return False
         
     # TODO : somehow get list of open programs with detail from system
+    def get_open_programs(self) -> pd.DataFrame:
+        programs = []
+        for proc in psutil.process_iter(attrs=['pid', 'name']):
+            programs.append(
+                {
+                    'pid': proc.pid,
+                    'name': proc.name()
+                }
+            )
+        return pd.DataFrame(
+            index= [prog['pid'] for prog in programs],
+            data= [prog['name'] for prog in programs],
+        )
