@@ -33,7 +33,6 @@ class ProgramManager:
         else:
             return False
         
-    # TODO : somehow get list of open programs with detail from system
     def get_open_programs(self) -> pd.DataFrame:
         programs = []
         for proc in psutil.process_iter(attrs=['pid', 'name']):
