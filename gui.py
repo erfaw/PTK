@@ -224,8 +224,12 @@ class Gui:
         self.choose_page = Tk()
         self.choose_page.title('Choose a Program...')
         self.choose_page.config(bg= 'gray')
-        # TODO : somehow, fill client choice to entry of program name
+
         for index, app in app_show.iterrows():
+            def btn_func(app_name):
+                self.program_name_entry.insert(END, app_name['name'])
+                self.choose_page.destroy()
+
             button = Button(
                 master= self.choose_page,
                 text= f"{app['name']}",
@@ -233,6 +237,7 @@ class Gui:
                 highlightthickness= 0,
                 font= ('Calibri', 13, 'normal'),
                 width= 50,
+                command= lambda app=app: btn_func(app)
             )
             button.pack()
 
