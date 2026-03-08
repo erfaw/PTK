@@ -1,10 +1,13 @@
 import psutil, os
 from psutil import Process
 import pandas as pd
+from pathlib import Path
 
 class ProgramManager:
     def __init__(self):
         self.df_all_programs = None
+        self.df_not_include = None
+        self.df_client_apps = None
 
     def find_processes(self, name:str) -> list[Process]:
         """Find all process IDs (PIDs) of a given program by its name."""
@@ -40,4 +43,12 @@ class ProgramManager:
                     'name': proc.name()
                 }
             )
-        return pd.DataFrame(programs)
+        self.df_all_programs = pd.DataFrame(programs)
+
+        not_include_fp = Path(__file__).resolve().parent / 'not_client_app.csv'
+        self.df_not_include = pd.read_csv(not_include_fp)
+        
+        result = self.df_all_programs[
+            ~ self.df_all_programs['name'].isin(self.df_not_include['name'])
+        ]
+        return result
