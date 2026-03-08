@@ -221,4 +221,10 @@ class Gui:
     def update_progress_bar(self, value):
         self.progress_bar['value'] = value
 
+    def render_browse_page(self):
+        self.choose_page = Tk()
+        self.choose_page.title('Choose a Program...')
+        self.choose_page.config(bg= 'gray')
+        self.choose_page.mainloop()
+        
 # TODO : some how change icon of program

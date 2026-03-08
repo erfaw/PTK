@@ -64,12 +64,19 @@ def main():
                 ui.back_home()
         count_down_timer(wait_time)
 
+def take_program_from_sys():
+    ui.render_browse_page()
+
 ui.init_configs(
     now_time_obj= timer.get_now()
 )
 
 ui.accept_btn.config(
     command= main
+)
+
+ui.browse_btn.config(
+    command= take_program_from_sys
 )
 
 ui.root.mainloop()
