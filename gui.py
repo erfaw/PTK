@@ -84,6 +84,7 @@ class Gui:
             width=10,
             font= self.base_font,
             justify= 'center',
+            increment= 15
             # command=None
         )
         self.target_hour_entry.grid(
