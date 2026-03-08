@@ -29,14 +29,27 @@ class Gui:
         )
 
         self.program_name_entry = Entry(
-            width= 30,
+            width= 25,
             font= self.base_font
         ) # TODO : alongside of entry, build a btn to render a page, which had a list of open programs from taskbar of system for user to choose (instead of type program name itself) 
         self.program_name_entry.focus()
         self.program_name_entry.grid(
             row= 1,
             column= 0,
-            columnspan= 6
+            columnspan= 5
+        )
+
+        self.browse_btn = Button(
+            text='Browse',
+            bg='white',
+            highlightthickness= 0,
+            font= ('Calibri', 13, 'normal'),
+            # command= cancele timer and restart,
+        )
+        self.browse_btn.grid(
+            row= 1,
+            column= 5,
+            columnspan= 1
         )
 
         self.titr_label_2 = Label(
@@ -181,6 +194,7 @@ class Gui:
             self.target_minute_entry,
             self.accept_btn,
             self.am_or_pm,
+            self.browse_btn,
         ]
         for element in self.first_page_elements:
             element.grid_remove()
