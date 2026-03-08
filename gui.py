@@ -175,7 +175,7 @@ class Gui:
         )
         self.progress_bar.grid(pady=2)
 
-        self.timer_cancele_btn = Button( # TODO : choose a better color for this btn
+        self.timer_cancele_btn = Button(
             text='Cancel',
             bg='red',
             highlightthickness= 0,
