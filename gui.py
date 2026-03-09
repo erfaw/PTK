@@ -115,6 +115,8 @@ class Gui:
         else: 
             self.am_or_pm.select_set(0)
 
+        # TODO : add checkbox for setting notification or not
+
         self.accept_btn = Button(text= "Agree", width= 51)
         self.accept_btn.grid(
             pady= 2,

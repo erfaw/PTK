@@ -45,6 +45,7 @@ def main():
                 ui.update_progress_bar(
                     (1-(count/wait_time))*100
                 )
+                # TODO : add functionality to get accept from client for show or not notif
                 if int(count) == 1.5*60 :
                     notification.send(f"<< {program_name} >> will close in 1.5 minutes.")
                 elif int(count) == 15*60 :
