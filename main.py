@@ -2,7 +2,7 @@ from program import ProgramManager
 from timer import Timer
 from notification import Notification
 from gui import Gui
-
+# TODO : think about how we could do this procedure for more than 1 program, either in one page or separated pages
 program_manager = ProgramManager()
 
 notification = Notification()
