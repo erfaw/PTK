@@ -1,7 +1,6 @@
 from program import ProgramManager
 from timer import Timer
 from notification import Notification
-import os
 from gui import Gui
 
 program_manager = ProgramManager()

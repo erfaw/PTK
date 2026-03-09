@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from pathlib import Path
-from tkinter.ttk import Progressbar, Style
+from tkinter.ttk import Progressbar
 
 class Gui:
     def __init__(self):

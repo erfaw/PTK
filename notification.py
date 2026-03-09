@@ -1,6 +1,4 @@
 from plyer import notification
-from PIL import Image
-from pathlib import Path
 
 class Notification:
     def __init__(self):
