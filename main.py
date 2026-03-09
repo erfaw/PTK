@@ -3,6 +3,7 @@ from timer import Timer
 from notification import Notification
 from gui import Gui
 # TODO : think about how we could do this procedure for more than 1 program, either in one page or separated pages
+# TODO : think about how could we implement common times for set, like 15min after now or 1h or 3h or whatever
 program_manager = ProgramManager()
 
 notification = Notification()
