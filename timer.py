@@ -3,7 +3,7 @@ import time
 import pytz
 
 class Timer:
-    def __init__(self, notif_obj):
+    def __init__(self):
         self.time_zone = pytz.timezone('Asia/Tehran')
 
     def calculate_wait_time(self, target_time) -> float:
