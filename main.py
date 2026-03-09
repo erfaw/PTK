@@ -8,7 +8,7 @@ program_manager = ProgramManager()
 
 notification = Notification()
 
-timer = Timer(notif_obj= notification)
+timer = Timer()
 
 ui = Gui()
 
