@@ -246,7 +246,7 @@ class Gui:
         self.choose_page.mainloop()
         
     def set_icon(self):
-        icon_fp = Path(__file__).resolve().parent / 'icon.png'
+        icon_fp = Path(__file__).resolve().parent / 'icons' / 'icon.png'
         self.icon_image = PhotoImage(file= icon_fp)
         self.root.iconphoto(
             True,

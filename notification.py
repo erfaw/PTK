@@ -4,7 +4,7 @@ from pathlib import Path
 
 class Notification:
     def __init__(self):
-        # icon_fp = Path(__file__).resolve().parent / 'icon.ico'
+        # icon_fp = Path(__file__).resolve().parent / 'icons' / 'icon.ico'
         # self.icon_image = Image.open(icon_fp)
         pass
 
