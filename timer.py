@@ -18,7 +18,7 @@ class Timer:
     
     def format_time(self, seconds):
         """return %M:%S formated string of float seconds recieved as arg"""
-        return time.strftime("%M : %S", time.gmtime(seconds))
+        return time.strftime("%H:%M:%S", time.gmtime(seconds))
     
     def get_now(self):
         return datetime.now(tz= self.time_zone).time()
