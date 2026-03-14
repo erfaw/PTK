@@ -58,6 +58,8 @@ def main():
                 )
             else: 
                 ui.root.after_cancel(timer_after_id)
+                # TODO : catch the moment when program is have not admin access and gets acces denied error
+                # TODO : show a warn with gui to user about it
                 if program_manager.kill(program_name):
                     ui.info(f"<< {program_name} >> closed!")
                 else:

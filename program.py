@@ -20,6 +20,8 @@ class ProgramManager:
     def close_programs(self, pids, program_name) -> bool:
         """Close all programs using their PIDs."""
         for pid in pids:
+            # TODO : catch the moment when program is have not admin access and gets acces denied error
+            # TODO : show a warn with gui to user about it
             os.kill(pid, 9)  # Sends SIGKILL to terminate the process
         return True
 

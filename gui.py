@@ -162,6 +162,7 @@ class Gui:
                 "bold")
         )
 
+        # TODO : make text of program_name align to left and check it for a long length str as name
         self.details = self.timer_container.create_text(
             45,
             10,
