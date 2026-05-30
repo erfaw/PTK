@@ -1,7 +1,12 @@
 
 # <img src="./icons/icon.ico" width=25px> PTK (Process-To-Kill) 
-<!-- | [Screen Shots](https://github.com/erfaw/PTK#screen-shots) 
-| -->
+| [Overview](https://github.com/erfaw/PTK#-overview) 
+| [How to Run](https://github.com/erfaw/PTK#%EF%B8%8F-how-to-run) 
+| [Features](https://github.com/erfaw/PTK#-features) 
+| [Software Architecture](https://github.com/erfaw/PTK#software-architecture) 
+| [Preview](https://github.com/erfaw/PTK#%EF%B8%8F-preview) 
+| [What I Learned](https://github.com/erfaw/PTK#-what-i-learned) 
+|
    ## 📝 Overview 
    This project is a **desktop application** built with `Python` & `Tkinter` that ***helps users limit the amount of time spent using specific programs***. 
    
