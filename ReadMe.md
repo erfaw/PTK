@@ -56,6 +56,16 @@
 
    ## 🌟 Features
 
+   * Set a `custom time limit` for any running application.
+   * `Select a target program` by entering its `process name` or using the `Browse feature`.
+   * Display a `live countdown timer` until the selected application is terminated.
+   * Send `reminder notifications` <u>15 minutes</u> and <u>1.5 minutes</u> before the time limit expires.
+   * Automatically `terminate` the target process when the timer reaches zero.
+   * `Filter unrelated processes` from the `Browse list` to simplify program selection.
+   * Designed and tested for `Windows` environments.
+   * `Need administrator privileges` for managing external processes.
+
+
    ---
 
    ## 🖼️ Preview
