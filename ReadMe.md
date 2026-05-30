@@ -3,6 +3,26 @@
 <!-- | [Screen Shots](https://github.com/erfaw/PTK#screen-shots) 
 | -->
    ## 📝 Overview 
+   This project is a **desktop application** built with `Python` & `Tkinter` that ***helps users limit the amount of time spent using specific programs***. 
+   
+   It was originally created as a `personal productivity tool` to reduce gaming time and encourage better time management.
+
+   Users can either type a process name manually or select one through the built-in `Browse` feature. The application creates a `countdown timer`, `sends notification reminders` before the time expires, and `automatically terminates the selected process` when the timer reaches zero.
+
+   **NOTE** : Currently, the application has only been tested on Windows and must be run with administrator privileges in order to manage and terminate external processes.
+
+   ### Architecture
+
+   I tried to project follows Object-Oriented Programming (OOP) principles and Separation of Concerns. Responsibilities are divided into dedicated Classes in separate modules:
+
+   * **ProgramManager** – Process discovery, management, and termination.
+   * **Timer** – Time calculations, formatting, and countdown management.
+   * **Notification** – User notification delivery.
+   * **GUI** – User interface, input handling, warnings, and timer visualization.
+
+   These components are orchestrated by `main.py`, which acts as the application's entry point.
+
+   ---
 
    ## ▶️ How to Run
    1. Ensure you have Python installed.
@@ -32,8 +52,14 @@
       python main.py
       ```
 
+   ---
+
    ## 🌟 Features
 
+   ---
+
    ## 🖼️ Preview
+
+   ---
 
    ## 💡 What I Learned 
