@@ -70,6 +70,14 @@
    ---
 
    ## 🖼️ Preview
+   ![preview-gif](./assets/preview/PTK-preview.gif)
+
+   ### Sample Notification
+   ![sample-notification](./assets/preview/sample-notification.png)
+
+   ### Sample Close MessageBox
+   ![sample-close-messagebox](./assets/preview/close-message-box.png)
+
 
    ---
 
