@@ -82,3 +82,15 @@
    ---
 
    ## 💡 What I Learned 
+   * Building a desktop application with Tkinter for a real-world personal use case.
+   * Designing graphical user interfaces instead of relying solely on command-line applications.
+   * Working with the Tk/Tcl event loop and understanding how GUI applications handle user interactions and scheduled tasks.
+   * Managing and monitoring operating system processes programmatically.
+   * Implementing countdown timers and time-based automation workflows.
+   * Sending desktop notifications and integrating user reminders into applications.
+   * Setting custom application icons and improving the overall user experience.
+   * Applying Object-Oriented Programming (OOP) principles to structure a larger application.
+   * Practicing Separation of Concerns by distributing responsibilities across dedicated modules.
+   * Designing components that communicate with one another without relying on a single "God Object".
+   * Building a more maintainable and scalable codebase through modular architecture.
+   * Translating a personal productivity problem into a complete software solution.
