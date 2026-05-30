@@ -6,7 +6,7 @@
 
    ## 🌟 Features
 
-   ## 🖼️ Preview / پیش‌نمایش (اختیاری)
+   ## 🖼️ Preview
 
    ## 💡 What I Learned 
 
