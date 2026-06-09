@@ -46,7 +46,7 @@ class ProgramManager:
             )
         self.df_all_programs = pd.DataFrame(programs)
 
-        not_include_fp = Path(__file__).resolve().parent / 'data' / 'not_client_app.csv'
+        not_include_fp = Path(__file__).resolve().parent / 'data' / 'not_client_app.csv' # TODO : make a button and a mechanism to collect this list when user ask and the system is fresh as user point of view.
         self.df_not_include = pd.read_csv(not_include_fp)
         
         result = self.df_all_programs[
