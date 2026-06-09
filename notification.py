@@ -8,6 +8,7 @@ class Notification:
 
     def send(self, message):
         """Send a notification to the user."""
+        # # TODO : use another thing to notify in windows. and search for cause of problem with pyinstaller (didnt work with plyer.notification)
         notification.notify(
             title="PTK",
             message=message,
