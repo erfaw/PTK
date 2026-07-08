@@ -46,10 +46,9 @@ def main():
                 ui.update_progress_bar(
                     (1-(count/wait_time))*100
                 )
-                # TODO : add functionality to get accept from client for show or not notif
-                if int(count) == 1.5*60 :
+                if ui.is_notif_one_half_min.get() and int(count) == 1.5*60 :
                     notification.send(f"<< {program_name} >> will close in 1.5 minutes.")
-                elif int(count) == 15*60 :
+                elif ui.is_notif_fifteen_min.get() and int(count) == 15*60 :
                     notification.send(f"<< {program_name} >> will close in 15 minutes.")
                 timer_after_id = ui.root.after(
                     1000,
@@ -58,8 +57,6 @@ def main():
                 )
             else: 
                 ui.root.after_cancel(timer_after_id)
-                # TODO : catch the moment when program is have not admin access and gets acces denied error
-                # TODO : show a warn with gui to user about it
                 if program_manager.kill(program_name):
                     ui.info(f"<< {program_name} >> closed!")
                 else:
