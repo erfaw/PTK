@@ -1,5 +1,4 @@
 from plyer import notification
-from winotify import Notification
 
 
 class Notification:
@@ -16,4 +15,4 @@ class Notification:
             message=message,
             timeout=5,  # Duration in seconds
             # app_icon= self.icon_image
-        )
+        ) # type: ignore
