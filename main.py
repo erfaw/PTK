@@ -52,9 +52,9 @@ def main():
                     (1-(count/wait_time))*100
                 )
                 if ui.is_notif_one_half_min.get() and int(count) == 1.5*60 :
-                    notification.send(f"<< {program_name} >> will close in 1.5 minutes.")
+                    notification.send_plyer(f"<< {program_name} >> will close in 1.5 minutes.")
                 elif ui.is_notif_fifteen_min.get() and int(count) == 15*60 :
-                    notification.send(f"<< {program_name} >> will close in 15 minutes.")
+                    notification.send_plyer(f"<< {program_name} >> will close in 15 minutes.")
                 timer_after_id = ui.root.after(
                     1000,
                     count_down_timer,
