@@ -1,7 +1,7 @@
 from program import ProgramManager
 from timer import Timer
 from notification import Notification
-from gui import Gui
+from gui import Gui, TclError
 # TODO : think about how we could do this procedure for more than 1 program, either in one page or separated pages
 # TODO : think about how could we implement common times for set, like 15min after now or 1h or 3h or whatever
 program_manager = ProgramManager()
@@ -19,7 +19,13 @@ def main():
 
     target_hour = ui.target_hour_entry.get()
     target_minute = ui.target_minute_entry.get()
-    target_am_pm = ui.am_or_pm.get(ui.am_or_pm.curselection())
+    try:
+        target_am_pm = ui.am_or_pm.get(ui.am_or_pm.curselection())
+    except TclError: # TODO : make it better. for now act on not getting anything from ui. this data must came from ui and not going to raise an Error. 
+        if timer.get_now().hour >= 12:
+            target_am_pm = 'PM'
+        else: 
+            target_am_pm = 'AM'
     target_time = f"{target_hour}:{target_minute} {target_am_pm}"
 
     try:
