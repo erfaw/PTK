@@ -116,11 +116,43 @@ class Gui:
             self.am_or_pm.select_set(0)
 
         # TODO : add checkbox for setting notification or not
+        # def checkbutton_used():
+        #     print(
+        #         self.is_notif_one_half_min.get()
+        #     )
+
+        self.is_notif_one_half_min = BooleanVar()
+        self.notif_one_half_min_checkbtn = (
+            Checkbutton(
+                text="1.5-Min-Notif", 
+                variable=self.is_notif_one_half_min,
+            )
+        )
+        self.notif_one_half_min_checkbtn.grid(
+            pady= 2,
+            row= 4,
+            column= 0,
+            columnspan= 3,
+        )
+
+        self.is_notif_fifteen_min = BooleanVar()
+        self.notif_fifteen_min_checkbtn = (
+            Checkbutton(
+                text="15-Min-Notif", 
+                variable=self.is_notif_fifteen_min,
+            )
+        )
+        self.notif_fifteen_min_checkbtn.grid(
+            pady= 2,
+            row= 4,
+            column= 3,
+            columnspan= 3,
+        )
 
         self.accept_btn = Button(text= "Agree", width= 51)
         self.accept_btn.grid(
             pady= 2,
-            row= 4,
+            row= 5,
             column= 0,
             columnspan= 6
         )
@@ -199,6 +231,8 @@ class Gui:
             self.accept_btn,
             self.am_or_pm,
             self.browse_btn,
+            self.notif_one_half_min_checkbtn,
+            self.notif_fifteen_min_checkbtn,
         ]
         for element in self.first_page_elements:
             element.grid_remove()
