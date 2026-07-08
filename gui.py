@@ -115,11 +115,6 @@ class Gui:
         else: 
             self.am_or_pm.select_set(0)
 
-        # TODO : add checkbox for setting notification or not
-        # def checkbutton_used():
-        #     print(
-        #         self.is_notif_one_half_min.get()
-        #     )
 
         self.is_notif_one_half_min = BooleanVar()
         self.notif_one_half_min_checkbtn = (
