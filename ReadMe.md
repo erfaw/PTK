@@ -101,5 +101,22 @@
    * Building a more maintainable and scalable codebase through modular architecture.
    * Translating a personal productivity problem into a complete software solution.
 
+   ---
+
+   ## Command for pyinstaller
+   ```
+   .venv/Scripts/python -m PyInstaller \
+    --onefile \
+    --clean \
+    --windowed \
+    --uac-admin \
+    --icon "icons/icon.ico" \
+    --collect-all pandas \
+    --collect-all plyer \
+    --add-data "data:data" \
+    --add-data "fonts:fonts" \
+    --add-data "icons:icons" \
+    main.py
+   ```
    <!-- ## Download portable (Windows) -->
    <!-- Go to [Releases](https://github.com/erfaw/PTK/releases/tag/v1.0.0) → download `latest version`  -->
