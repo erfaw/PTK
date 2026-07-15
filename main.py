@@ -2,6 +2,7 @@ from program import ProgramManager
 from timer import Timer
 from notification import Notification
 from gui import Gui, TclError
+import os
 # TODO : think about how could we implement common times for set, like 15min after now or 1h or 3h or whatever
 program_manager = ProgramManager()
 
@@ -13,7 +14,7 @@ ui = Gui()
 
 def main():
     program_name = ui.program_name_entry.get().strip()
-    if not '.exe' in program_name :
+    if os.name=='nt' and not '.exe' in program_name :
         program_name = f"{program_name}.exe"
 
     target_hour = ui.target_hour_entry.get()
@@ -61,7 +62,7 @@ def main():
                     count-1,
                 )
             else: 
-                ui.root.after_cancel(timer_after_id)
+                ui.root.after_cancel(timer_after_id) # type: ignore
                 if program_manager.kill(program_name):
                     ui.info(f"<< {program_name} >> closed!")
                 else:
