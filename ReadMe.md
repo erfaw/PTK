@@ -6,7 +6,7 @@
 | [Software Architecture](https://github.com/erfaw/PTK#software-architecture) 
 | [Preview](https://github.com/erfaw/PTK#%EF%B8%8F-preview) 
 | [What I Learned](https://github.com/erfaw/PTK#-what-i-learned) 
-<!-- | [Download portable (Windows)](https://github.com/erfaw/PTK#download-portable-windows)  -->
+| [Download portable (Windows & Linux)]() 
 |
    ## 📝 Overview 
    This project is a **desktop application** built with `Python` & `Tkinter` that ***helps users limit the amount of time spent using specific programs***. 
@@ -118,5 +118,5 @@
     --add-data "icons:icons" \
     main.py
    ```
-   <!-- ## Download portable (Windows) -->
-   <!-- Go to [Releases](https://github.com/erfaw/PTK/releases/tag/v1.0.0) → download `latest version`  -->
+   ## Download portable (Windows & Linux) -->
+   Go to [Releases](https://github.com/erfaw/PTK/releases) → download `latest version`
